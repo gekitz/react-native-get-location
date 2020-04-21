@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#ifdef LOCATIONING_ENABLED
 #import <React/RCTBridgeModule.h>
 #import <React/RCTConvert.h>
 #import <CoreLocation/CoreLocation.h>
@@ -28,3 +29,4 @@
 @interface LocationModule : NSObject <RCTBridgeModule, CLLocationManagerDelegate>
 
 @end
+#endif
