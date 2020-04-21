@@ -104,15 +104,15 @@ RCT_EXPORT_METHOD(openAppSettings: (RCTPromiseResolveBlock)resolve
     CLLocation* location = locations[0];
     
     NSDictionary* locationResult = @{
-                                     @"latitude": @(location.coordinate.latitude),
-                                     @"longitude": @(location.coordinate.longitude),
-                                     @"altitude": @(location.altitude),
-                                     @"speed": @(location.speed),
-                                     @"accuracy": @(location.horizontalAccuracy),
-                                     @"time": @(location.timestamp.timeIntervalSince1970),
-                                     @"verticalAccuracy": @(location.verticalAccuracy),
-                                     @"course": @(location.course),
-                                     };
+      @"latitude": @(location.coordinate.latitude),
+      @"longitude": @(location.coordinate.longitude),
+      @"altitude": @(location.altitude),
+      @"speed": @(location.speed),
+      @"accuracy": @(location.horizontalAccuracy),
+      @"time": @(location.timestamp.timeIntervalSince1970),
+      @"verticalAccuracy": @(location.verticalAccuracy),
+      @"course": @(location.course),
+    };
     
     mResolve(locationResult);
   }
@@ -171,7 +171,7 @@ RCT_EXPORT_METHOD(openAppSettings: (RCTPromiseResolveBlock)resolve
 }
 
 - (void) startUpdatingLocation {
-  [mLocationManager startUpdatingLocation];
+  [mLocationManager requestLocation];
   
   if (mTimeout > 0) {
     NSTimeInterval timeoutInterval = mTimeout / 1000.0;
